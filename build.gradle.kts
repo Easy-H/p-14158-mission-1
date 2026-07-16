@@ -34,6 +34,12 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 }
 
+allOpen {
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperclass")
+    annotation("jakarta.persistence.Embeddable")
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
