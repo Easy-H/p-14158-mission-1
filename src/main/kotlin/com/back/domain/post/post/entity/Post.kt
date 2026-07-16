@@ -5,17 +5,14 @@ import com.back.global.jpa.entity.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.ManyToOne
+import java.time.LocalDateTime
 
 @Entity
 class Post(
     @ManyToOne // Post 가 많고(Many) Member 가 적다(One) // N:1 관계
-    var author: Member? = null,
-    var title: String? = null,
+    var author: Member,
+    var title: String,
     @Column(columnDefinition = "TEXT")
-    var content: String? = null
+    var content: String
 
-) : BaseEntity() {
-
-    constructor() : this(null, null, null)
-
-}
+) : BaseEntity()

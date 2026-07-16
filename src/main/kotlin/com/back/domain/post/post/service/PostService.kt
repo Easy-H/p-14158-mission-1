@@ -22,7 +22,7 @@ class PostService(private val postRepository: PostRepository) {
         post.content = content
     }
 
-    fun write(author: Member?, title: String, content: String): Post {
+    fun write(author: Member, title: String, content: String): Post {
         val post = Post(author, title, content)
         postRepository.save(post)
 

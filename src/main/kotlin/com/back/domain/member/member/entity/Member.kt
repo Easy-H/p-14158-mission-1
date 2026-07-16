@@ -7,12 +7,8 @@ import jakarta.persistence.Entity
 @Entity
 class Member(
     @Column(unique = true)
-    var username: String? = null,
-
-    var password: String? = null,
-
-    var nickname: String? = null) : BaseEntity() {
-
-    constructor() : this(null, null, null)
+    val username: String,
+    var password: String,
+    var nickname: String) : BaseEntity() {
 
 }

@@ -5,13 +5,14 @@ import com.back.domain.member.member.repository.MemberRepository
 import org.springframework.stereotype.Service
 
 @Service
-class MemberService(private val memberRepository: MemberRepository) {
+class MemberService(
+    private val memberRepository: MemberRepository) {
     fun count(): Long {
         return memberRepository.count()
     }
 
-    fun join(username: String?, password: String?, nickname: String?): Member {
-        return memberRepository.save<Member>(
+    fun join(username: String, password: String, nickname: String): Member {
+        return memberRepository.save(
             Member(username, password, nickname)
         )
     }
