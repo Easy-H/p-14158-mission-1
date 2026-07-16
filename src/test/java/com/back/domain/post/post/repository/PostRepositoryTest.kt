@@ -34,11 +34,11 @@ class PostRepositoryTest {
     fun t2() {
         val memberUser1 = memberRepository!!.findById(3).get()
         val post = Post(memberUser1, "제목 new", "내용 new")
-        Assertions.assertThat(post.getId()).isEqualTo(0)
+        Assertions.assertThat(post.id).isEqualTo(0)
 
         postRepository!!.save(post)
 
-        Assertions.assertThat(post.getId()).isGreaterThan(0)
+        Assertions.assertThat(post.id).isGreaterThan(0)
         Assertions.assertThat(post.getTitle()).isEqualTo("제목 new")
         Assertions.assertThat(post.getContent()).isEqualTo("내용 new")
     }
