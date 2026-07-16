@@ -36,7 +36,7 @@ class BaseInitData(
         val memberUser2 = memberService.join("user2", "1234", "유저2")
         val memberUser3 = memberService.join("user3", "1234", "유저3")
 
-        if (postService!!.count() > 0) return
+        if (postService.count() > 0) return
 
         val post1 = postService.write(memberUser1, "제목 1", "내용 1")
         val post2 = postService.write(memberUser2, "제목 2", "내용 2")

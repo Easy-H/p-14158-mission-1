@@ -5,20 +5,14 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 
 @Entity
-class Member : BaseEntity {
+class Member(
     @Column(unique = true)
-    var username: String? = null
-        private set
-    var password: String? = null
-        private set
-    var nickname: String? = null
-        private set
+    var username: String? = null,
 
-    constructor()
+    var password: String? = null,
 
-    constructor(username: String?, password: String?, nickname: String?) {
-        this.username = username
-        this.password = password
-        this.nickname = nickname
-    }
+    var nickname: String? = null) : BaseEntity() {
+
+    constructor() : this(null, null, null)
+
 }

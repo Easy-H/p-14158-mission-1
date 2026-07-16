@@ -7,20 +7,15 @@ import jakarta.persistence.Entity
 import jakarta.persistence.ManyToOne
 
 @Entity
-class Post : BaseEntity {
+class Post(
     @ManyToOne // Post 가 많고(Many) Member 가 적다(One) // N:1 관계
-    var author: Member? = null // 필드명 : AUTHOR_ID, 설명 : MEMBER 테이블의 ID값이 저장
-        private set
-    var title: String? = null
-
+    var author: Member? = null,
+    var title: String? = null,
     @Column(columnDefinition = "TEXT")
     var content: String? = null
 
-    constructor()
+) : BaseEntity() {
 
-    constructor(author: Member?, title: String?, content: String?) {
-        this.author = author
-        this.title = title
-        this.content = content
-    }
+    constructor() : this(null, null, null)
+
 }

@@ -8,14 +8,14 @@ import java.time.LocalDateTime
 
 @MappedSuperclass // 엔티티의 부모 클래스에는 이걸 달아야 한다.
 @EntityListeners(AuditingEntityListener::class)
-abstract class BaseEntity {
+abstract class BaseEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int = 0
+    var id: Int = 0,
 
     @CreatedDate
-    var createDate: LocalDateTime? = null
+    var createDate: LocalDateTime? = null,
 
     @LastModifiedDate
     var modifyDate: LocalDateTime? = null
-}
+) { }
