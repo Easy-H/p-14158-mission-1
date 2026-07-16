@@ -2,7 +2,6 @@ package com.back.global.initData
 
 import com.back.domain.member.member.service.MemberService
 import com.back.domain.post.post.service.PostService
-import lombok.RequiredArgsConstructor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -11,8 +10,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Lazy
 import org.springframework.transaction.annotation.Transactional
 
-@Configuration
-@RequiredArgsConstructor // dev, test, prod 등 활성화된 프로파일에 상관없이 항상 실행
+@Configuration // dev, test, prod 등 활성화된 프로파일에 상관없이 항상 실행
 class BaseInitData(
     val memberService: MemberService,
     val postService: PostService
