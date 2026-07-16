@@ -18,8 +18,8 @@ class PostService(private val postRepository: PostRepository) {
     }
 
     fun modify(post: Post, title: String, content: String) {
-        post.setTitle(title)
-        post.setContent(content)
+        post.title = title
+        post.content = content
     }
 
     fun write(author: Member?, title: String, content: String): Post {

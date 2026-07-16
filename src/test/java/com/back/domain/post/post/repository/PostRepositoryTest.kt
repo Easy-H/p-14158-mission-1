@@ -25,8 +25,8 @@ class PostRepositoryTest {
     fun t1() {
         val post2 = postRepository!!.findById(2).get()
 
-        Assertions.assertThat(post2.getTitle()).isEqualTo("제목 2")
-        Assertions.assertThat(post2.getContent()).isEqualTo("내용 2")
+        Assertions.assertThat(post2.title).isEqualTo("제목 2")
+        Assertions.assertThat(post2.content).isEqualTo("내용 2")
     }
 
     @Test
@@ -39,8 +39,8 @@ class PostRepositoryTest {
         postRepository!!.save(post)
 
         Assertions.assertThat(post.id).isGreaterThan(0)
-        Assertions.assertThat(post.getTitle()).isEqualTo("제목 new")
-        Assertions.assertThat(post.getContent()).isEqualTo("내용 new")
+        Assertions.assertThat(post.title).isEqualTo("제목 new")
+        Assertions.assertThat(post.content).isEqualTo("내용 new")
     }
 
     @Test
