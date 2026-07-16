@@ -9,10 +9,10 @@ import java.time.LocalDateTime
 
 @Entity
 class Post(
-    @ManyToOne // Post 가 많고(Many) Member 가 적다(One) // N:1 관계
-    var author: Member,
+    @field:ManyToOne // Post 가 많고(Many) Member 가 적다(One) // N:1 관계
+    val author: Member,
     var title: String,
-    @Column(columnDefinition = "TEXT")
+    @field:Column(columnDefinition = "TEXT")
     var content: String
 
 ) : BaseEntity()

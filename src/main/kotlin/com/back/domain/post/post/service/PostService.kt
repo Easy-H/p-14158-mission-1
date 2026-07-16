@@ -4,7 +4,6 @@ import com.back.domain.member.member.entity.Member
 import com.back.domain.post.post.entity.Post
 import com.back.domain.post.post.repository.PostRepository
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class PostService(private val postRepository: PostRepository) {
@@ -13,8 +12,8 @@ class PostService(private val postRepository: PostRepository) {
         return postRepository.count()
     }
 
-    fun findById(id: Int): Optional<Post> {
-        return postRepository.findById(id)
+    fun findById(id: Int): Post? {
+        return postRepository.findById(id).orElseGet(null)
     }
 
     fun modify(post: Post, title: String, content: String) {
